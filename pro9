@@ -1,0 +1,32 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+int a[10],mid,n,beg,last,i,se;
+printf("]n enter how many numbers as\n");
+scanf("%d",&n);
+printf("enter the number one by one:");
+for(i=0;i<n;i++)
+{
+scanf("%d",&a[i]);
+}
+beg=0;
+last=n;
+printf("\n enter element to search\n");
+scanf("%d",&se);
+while(beg<=last)
+{
+mid=(beg+last/2);
+if(a[mid]==se)
+{
+printf("element found of the position %d",mid+1);
+exit(0);
+}
+if(a[mid]<se)
+beg=mid+1;
+if(a[mid]>se)
+last=mid-1;
+}
+if(beg!=last)
+printf("element not found");
+}
